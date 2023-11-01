@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscando Cep</title>
+</head>
+
+<body>
+    <h1>Buscando Cep - AJAX</h1>
+
+    <form action="">
+        <input type="number" name="nmCep" id="idCep">
+        <button type="button" id="idBtBuscarCep">Buscar Cep</button>
+    </form>
+
+    <script>
+        let botao = document.querySelector('#idBtBuscarCep');
+
+        // QUANDO CLICAR NO BOTÃO -> BUSCAR O CEP -> IMPRIMIR O ENDEREÇO
+        botao.onclick = () => {
+            let cep = document.querySelector('#idCep').value;
+            buscarCep(cep);
+        }
+
+        function buscarCep(cep) {
+            // Cria um objeto XMLHttpRequest.
+            var xhr = new XMLHttpRequest()
+
+            // Abre uma conexão com a URL do ViaCEP usando o método GET.
+            xhr.open("GET", "https://viacep.com.br/ws/" + cep + "/json/")
+
+            // Define um evento que será acionado quando a resposta estiver pronta.
+            xhr.addEventListener("load", function () {
+                let resposta = xhr.responseText
+                imprimirEndereco(resposta)
+            })
+
+            // Envia a solicitação para o servidor.
+            xhr.send()
+        }
+
+        function imprimirEndereco(enderecoJSON) {
+            console.log(enderecoJSON)
+
+            let enderecoOBJ = JSON.parse(enderecoJSON) //Convertendo um JSON para JSObject
+            console.log(enderecoOBJ);
+
+            console.log("Logradouro " + enderecoOBJ.logradouro);
+
+            let endJSON = JSON.stringify(enderecoOBJ) //Convertendo um JSObject para JSON
+            console.log(endJSON);
+        }
+    </script>
+
+</body>
+
+</html>
