@@ -1,0 +1,62 @@
+/* Estilo do Glassmorphism para o Modal */
+.modal-content {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header, .modal-footer {
+    border: none;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* Outros Estilos */
+body {
+    background: linear-gradient(45deg, #91EAE4, #86A8E7);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adicione essas regras ao seu arquivo de estilo personalizado (style.css) */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Adicione estas regras ao seu arquivo de estilo personalizado (style.css) */
+.glassmorphism {
+    max-width: 400px; /* Defina a largura máxima do contêiner conforme necessário */
+    margin: 0 auto;  /* Isso centralizará o contêiner na tela horizontalmente */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Outras regras de estilo para os selects e opções permanecem as mesmas */
+.glassmorphism select {
+    background: transparent;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 10px;
+    color: #495057;
+}
+
+.glassmorphism select option {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+}
+
+.glassmorphism select option:checked {
+    background-color: #86A8E7;
+    color: #fff;
+}
